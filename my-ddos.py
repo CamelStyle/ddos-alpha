@@ -20,7 +20,7 @@ __GITHUB__	= "https://github.com/unknown"
     GNU General Public License for more details.
 """
 
-import colorama
+
 import threading
 import requests
 
